@@ -20,8 +20,8 @@ body {
 
 /* Header styles */
 .site-header {
-    background: #fff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background: #252525;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
     position: fixed;
     width: 100%;
     top: 0;
@@ -102,6 +102,27 @@ body {
 
 .cta-button:hover {
     background: #0056b3;
+}
+
+/* Services section */
+.services {
+    padding: 4rem 0;
+    background: #252525;
+}
+
+.services h2 {
+    text-align: center;
+    color: #ff4d4d;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.services p {
+    color: #b3b3b3;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 /* Features section */
