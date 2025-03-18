@@ -48,12 +48,12 @@ body {
 .nav-links a {
     margin-left: 2rem;
     text-decoration: none;
-    color: #666;
+    color: #b3b3b3;
     transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #007bff;
+    color: #ff4d4d;
 }
 
 /* Hero section */
@@ -127,12 +127,69 @@ body {
 /* About section */
 .about {
     padding: 4rem 0;
-    background: #f8f9fa;
+    background: #252525;
+}
+
+.about h2 {
+    text-align: center;
+    color: #ff4d4d;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.about-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-content p {
+    color: #b3b3b3;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
 }
 
 /* Contact section */
 .contact {
     padding: 4rem 0;
+}
+
+.contact h2 {
+    text-align: center;
+    color: #ff4d4d;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-info {
+    color: #b3b3b3;
+}
+
+.contact-info h3 {
+    color: #ff4d4d;
+    margin: 2rem 0 1rem;
+}
+
+.contact-info h3:first-child {
+    margin-top: 0;
+}
+
+.contact-info a {
+    color: #b3b3b3;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: #ff4d4d;
 }
 
 .contact-form {
@@ -195,5 +252,14 @@ body {
     
     .nav-links {
         display: none;
+    }
+    
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .contact-info {
+        text-align: center;
     }
 } 
