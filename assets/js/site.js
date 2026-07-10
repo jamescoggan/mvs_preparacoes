@@ -90,8 +90,8 @@
         var message = buildMessage();
         var subject = encodeURIComponent("Orçamento de projeto automotivo");
         var body = encodeURIComponent(message);
-
-        form.setAttribute("action", "mailto:contato@mvspreparacoes.com.br?subject=" + subject + "&body=" + body);
+        var mailtoHref = "mailto:contato@mvspreparacoes.com.br?subject=" + subject + "&body=" + body;
+        form.dataset.mailtoHref = mailtoHref;
 
         if (whatsappLink) {
             whatsappLink.setAttribute("href", "https://wa.me/5511995426610?text=" + body);
@@ -101,11 +101,13 @@
     if (form) {
         form.addEventListener("input", updateContactLinks);
         form.addEventListener("change", updateContactLinks);
-        form.addEventListener("submit", function () {
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
             updateContactLinks();
             if (status) {
                 status.textContent = "Abrindo seu aplicativo de email com o briefing preenchido.";
             }
+            window.location.href = form.dataset.mailtoHref;
         });
         updateContactLinks();
     }

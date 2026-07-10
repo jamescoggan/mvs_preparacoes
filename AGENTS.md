@@ -3,7 +3,7 @@
 This repository contains the static Jekyll site for `mvspreparacoes.com.br`.
 
 - Public route: `index.html`, rendered through `_layouts/default.html`.
-- Main stylesheet: `assets/css/style.css`.
+- Main stylesheet: `assets/css/mvs.css`.
 - Progressive enhancement script: `assets/js/site.js`.
 - Brand assets live in `assets/`; keep `assets/logo.png` as the source logo.
 - Build command: `bundle exec jekyll build`.

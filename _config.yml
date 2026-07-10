@@ -6,6 +6,7 @@ lang: pt-BR
 locale: pt_BR
 timezone: America/Sao_Paulo
 logo: /assets/logo-display.png
+asset_version: "20260710-cffef75"
 
 author:
   name: MVS Preparações
