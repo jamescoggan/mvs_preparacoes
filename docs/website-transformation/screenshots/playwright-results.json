@@ -1,0 +1,117 @@
+[
+  {
+    "viewport": "320x568",
+    "status": 200,
+    "consoleMessages": [],
+    "failedRequests": [],
+    "metrics": {
+      "lang": "pt-BR",
+      "h1Count": 1,
+      "scrollWidth": 320,
+      "clientWidth": 320,
+      "smallTargets": [],
+      "missingImageAlts": [],
+      "menuOpenAfter": 1
+    }
+  },
+  {
+    "viewport": "375x812",
+    "status": 200,
+    "consoleMessages": [],
+    "failedRequests": [],
+    "metrics": {
+      "lang": "pt-BR",
+      "h1Count": 1,
+      "scrollWidth": 375,
+      "clientWidth": 375,
+      "smallTargets": [],
+      "missingImageAlts": [],
+      "menuOpenAfter": 1
+    }
+  },
+  {
+    "viewport": "390x844",
+    "status": 200,
+    "consoleMessages": [],
+    "failedRequests": [],
+    "metrics": {
+      "lang": "pt-BR",
+      "h1Count": 1,
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "smallTargets": [],
+      "missingImageAlts": [],
+      "menuOpenAfter": 1
+    }
+  },
+  {
+    "viewport": "768x1024",
+    "status": 200,
+    "consoleMessages": [],
+    "failedRequests": [],
+    "metrics": {
+      "lang": "pt-BR",
+      "h1Count": 1,
+      "scrollWidth": 768,
+      "clientWidth": 768,
+      "smallTargets": [],
+      "missingImageAlts": []
+    }
+  },
+  {
+    "viewport": "1024x768",
+    "status": 200,
+    "consoleMessages": [],
+    "failedRequests": [],
+    "metrics": {
+      "lang": "pt-BR",
+      "h1Count": 1,
+      "scrollWidth": 1024,
+      "clientWidth": 1024,
+      "smallTargets": [],
+      "missingImageAlts": []
+    }
+  },
+  {
+    "viewport": "1280x800",
+    "status": 200,
+    "consoleMessages": [],
+    "failedRequests": [],
+    "metrics": {
+      "lang": "pt-BR",
+      "h1Count": 1,
+      "scrollWidth": 1280,
+      "clientWidth": 1280,
+      "smallTargets": [],
+      "missingImageAlts": []
+    }
+  },
+  {
+    "viewport": "1440x900",
+    "status": 200,
+    "consoleMessages": [],
+    "failedRequests": [],
+    "metrics": {
+      "lang": "pt-BR",
+      "h1Count": 1,
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "smallTargets": [],
+      "missingImageAlts": []
+    }
+  },
+  {
+    "viewport": "1920x1080",
+    "status": 200,
+    "consoleMessages": [],
+    "failedRequests": [],
+    "metrics": {
+      "lang": "pt-BR",
+      "h1Count": 1,
+      "scrollWidth": 1920,
+      "clientWidth": 1920,
+      "smallTargets": [],
+      "missingImageAlts": []
+    }
+  }
+]

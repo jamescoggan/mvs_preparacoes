@@ -1,50 +1,98 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="{{ site.lang | default: 'pt-BR' }}">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }} - {{ site.title }}</title>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    
-    <!-- Basic favicon -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0b0c0f">
+    <meta name="color-scheme" content="dark light">
+
     <link rel="icon" type="image/x-icon" href="{{ '/assets/favicon.ico' | relative_url }}">
-    
-    <!-- Modern favicon setup -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/assets/favicon/site.webmanifest">
-    
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/favicon/apple-touch-icon.png' | relative_url }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/favicon/favicon-32x32.png' | relative_url }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/favicon/favicon-16x16.png' | relative_url }}">
+    <link rel="manifest" href="{{ '/assets/favicon/site.webmanifest' | relative_url }}">
+    <link rel="preload" as="image" href="{{ '/assets/logo-display.png' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
     {% seo %}
+    <meta property="og:image" content="{{ '/assets/logo-display.png' | absolute_url }}">
+    <meta name="twitter:image" content="{{ '/assets/logo-display.png' | absolute_url }}">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AutoRepair",
+      "name": "MVS Preparações",
+      "url": "https://mvspreparacoes.com.br",
+      "logo": "https://mvspreparacoes.com.br/assets/logo-display.png",
+      "email": "contato@mvspreparacoes.com.br",
+      "telephone": "+55 11 5852-8640",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "R. Luciano Silva, 156 - Vila das Belezas",
+        "addressLocality": "São Paulo",
+        "addressRegion": "SP",
+        "postalCode": "05841-000",
+        "addressCountry": "BR"
+      },
+      "openingHours": ["Mo-Fr 10:00-13:00", "Mo-Fr 14:00-19:30"],
+      "sameAs": [
+        "https://www.facebook.com/mvspreparacoes",
+        "https://www.instagram.com/mvspreparacoes",
+        "https://www.youtube.com/user/MVSfreelife"
+      ]
+    }
+    </script>
 </head>
 <body>
-    <header class="site-header">
-        <nav class="navbar">
-            <div class="container">
-                <a href="{{ '/' | relative_url }}" class="logo">{{ site.title }}</a>
-                <div class="nav-links">
-                    <a href="#inicio">Inicio</a>
-                    <a href="#servicos">Serviços</a>
-                    <a href="#sobre">Sobre</a>
-                    <a href="#contato">Contato</a>
-                </div>
+    <div class="scroll-progress" aria-hidden="true"></div>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <header class="site-header" data-site-header>
+        <nav class="navbar" aria-label="Navegação principal">
+            <a href="{{ '/' | relative_url }}" class="brand" aria-label="MVS Preparações, página inicial">
+                <img src="{{ '/assets/logo-display.png' | relative_url }}" alt="" width="360" height="202">
+                <span>MVS Preparações</span>
+            </a>
+
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+                <span class="nav-toggle__icon" aria-hidden="true"></span>
+                <span class="sr-only" data-menu-label>Abrir menu</span>
+            </button>
+
+            <div class="nav-links" id="primary-navigation" data-nav-links>
+                <a href="#inicio">Início</a>
+                <a href="#servicos">Serviços</a>
+                <a href="#processo">Processo</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#contato">Contato</a>
             </div>
         </nav>
     </header>
 
-    <main>
+    <main id="conteudo">
         {{ content }}
     </main>
 
     <footer class="site-footer">
-        <div class="container">
-            <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
+        <div class="footer-grid">
+            <div>
+                <img src="{{ '/assets/logo-display.png' | relative_url }}" alt="MVS Preparações" width="220" height="124" loading="lazy">
+                <p>Projetos personalizados de alta performance em São Paulo.</p>
+            </div>
+            <div>
+                <h2>Contato</h2>
+                <p><a href="mailto:contato@mvspreparacoes.com.br">contato@mvspreparacoes.com.br</a></p>
+                <p><a href="tel:+551158528640">(11) 5852-8640</a></p>
+                <p><a href="tel:+5511995426610">(11) 99542-6610</a></p>
+            </div>
+            <div>
+                <h2>Endereço</h2>
+                <p>R. Luciano Silva, 156 - Vila das Belezas<br>São Paulo - SP, 05841-000</p>
+            </div>
         </div>
+        <p class="copyright">&copy; {{ site.time | date: '%Y' }} MVS Preparações. Todos os direitos reservados.</p>
     </footer>
+
+    <script src="{{ '/assets/js/site.js' | relative_url }}" defer></script>
 </body>
-</html> 
+</html>

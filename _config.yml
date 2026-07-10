@@ -1,11 +1,24 @@
 title: MVS Preparações
-description: A beautiful and modern landing page built with Jekyll
+description: Oficina automotiva em São Paulo especializada em projetos personalizados de alta performance.
 baseurl: ""
-url: ""
+url: "https://mvspreparacoes.com.br"
+lang: pt-BR
+locale: pt_BR
+timezone: America/Sao_Paulo
+logo: /assets/logo-display.png
+
+author:
+  name: MVS Preparações
+
+social:
+  name: MVS Preparações
+  links:
+    - https://www.facebook.com/mvspreparacoes
+    - https://www.instagram.com/mvspreparacoes
+    - https://www.youtube.com/user/MVSfreelife
 
 # Build settings
 markdown: kramdown
-theme: minima
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
@@ -16,4 +29,10 @@ exclude:
   - Gemfile.lock
   - node_modules
   - vendor
-  - .git/ 
+  - .bundle
+  - .git/
+  - .agent
+  - AGENTS.md
+  - docs/website-transformation
+  - Dockerfile
+  - docker-compose.yml

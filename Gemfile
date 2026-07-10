@@ -8,8 +8,3 @@ group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.12"
   gem "jekyll-seo-tag", "~> 2.8"
 end
-
-# Development gems
-group :development do
-  gem 'jekyll-livereload', '~> 0.2.2'
-end 
