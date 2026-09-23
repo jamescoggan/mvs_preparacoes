@@ -1844,6 +1844,10 @@ h3 {
     color: var(--steel);
 }
 
+.nowrap {
+    white-space: nowrap;
+}
+
 .site-footer__credit a {
     color: var(--bone);
     text-decoration: underline;

@@ -25,7 +25,7 @@ Transform the single-page Jekyll site, layout, styling, metadata, contact flow, 
 - Email: `contato@mvspreparacoes.com.br`.
 - Phone: `(11) 5852-8640`.
 - Mobile: `(11) 99542-6610`.
-- Hours: Monday to Friday, 10:00 to 19:30, closed for lunch from 13:00 to 14:00.
+- Hours: Monday to Thursday, 08:00 to 18:00; Friday, 08:00 to 17:00 (updated 2026-09-23 per client).
 - Existing services/content mention preparation, equipment, technical labor, motor customization, electronic injection, peripherals, personalized projects, quality, durability, and continuous improvement.
 - Existing official social links point to Facebook, Instagram, and YouTube.
 

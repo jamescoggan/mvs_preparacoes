@@ -12,6 +12,7 @@ Items the client (MVS) must supply or confirm before anything below can appear p
 | Certifications, partnerships, awards | Trust signals. | Omitted. |
 | Team (names, roles, photo of Marcelo) | Personalises the "since 2006" story. | Only Marcelo's name and start year, taken from existing site copy. |
 | Saturday or holiday hours | The hours currently cover Monday to Friday only. | Monday to Friday shown as confirmed. |
+| Lunch closure | The client's 2026-09-23 update ("Seg a qui. Das 8hs as 18hs / Sex. Das 8hs as 17hs") did not mention a lunch closure, so the previous "Almoço · 13:00–14:00" line was removed. Not yet confirmed whether the shop still closes for lunch. | Omitted pending confirmation. |
 | Confirmation that WhatsApp is on (11) 99542-6610 | The primary CTA depends on it. | Assumed, following BRIEF.md (inherited assumption). |
 | A form backend | The brief form is local-only (mailto/WhatsApp). | Kept honest: no fake submission. |
 | Social-share image (og:image) | The current og:image is the logo. A generated hero could be used, but it's illustrative. | Logo kept as og:image. |

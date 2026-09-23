@@ -27,6 +27,7 @@ Source of truth for approaches chosen and rejected in this POC. Newest last.
 | D21 | 2026-09-23 | Hero gauge moved into the bottom rail (56px). Process gauge is `aria-hidden`. The 4:5 interlude art is served up to 1023px. The header over paper uses .94 opacity. Phone timeline years are 4.5rem full width. | Review fixes: no overlap with the subject, a better tablet crop, legibility. The gauge is purely decorative. | Spec values. |
 | D22 | 2026-09-23 | Responsive WebP logo derivatives (`assets/logo-{176,224,352,480,720}.webp`) generated from `logo.png`. `logo-display.png` is kept for og:image and JSON-LD. | The 166 KB PNG was about 40% of the mobile first load. | Serving the PNG at display size. |
 | D23 | 2026-09-23 | `assets/facebook.png`, `instagram.png` and `youtube.png` are now unreferenced but kept. | Removing tracked files is out of scope for a POC; decide at merge. | Deleting them. |
+| D24 | 2026-09-23 | Updated published hours to "Seg a qui · 08:00–18:00 / Sex · 08:00–17:00" (JSON-LD, mobile menu, footer, contact channels) and dropped the "Almoço · 13:00–14:00" line. | Client supplied new hours ("Seg a qui. Das 8hs as 18hs / Sex. Das 8hs as 17hs") without mentioning a lunch closure. | Keeping the old lunch line unconfirmed. Logged in CONTENT_GAPS.md pending confirmation. |
 
 ## 2026-09-23 — Release to mvspreparacoes.com.br
 
