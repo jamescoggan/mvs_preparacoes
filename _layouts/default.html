@@ -2,16 +2,22 @@
 <html lang="{{ site.lang | default: 'pt-BR' }}">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#0b0c0f">
-    <meta name="color-scheme" content="dark light">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#07080A">
+    <meta name="color-scheme" content="dark">
+    <script>document.documentElement.classList.add("has-js");</script>
 
     <link rel="icon" type="image/x-icon" href="{{ '/assets/favicon.ico' | relative_url }}">
     <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/favicon/apple-touch-icon.png' | relative_url }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/favicon/favicon-32x32.png' | relative_url }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/favicon/favicon-16x16.png' | relative_url }}">
     <link rel="manifest" href="{{ '/assets/favicon/site.webmanifest' | relative_url }}">
-    <link rel="preload" as="image" href="{{ '/assets/logo-display.png' | relative_url }}">
+    <link rel="preload" as="font" type="font/woff2" href="{{ '/assets/fonts/big-shoulders-display-latin.woff2' | relative_url }}" crossorigin>
+{%- if page.hero_preload %}
+    <link rel="preload" as="image" type="image/avif" media="(max-width: 767px)" fetchpriority="high" imagesizes="100vw" imagesrcset="{{ '/assets/images/hero-mobile-720.avif' | relative_url }} 720w, {{ '/assets/images/hero-mobile-1080.avif' | relative_url }} 1080w">
+    <link rel="preload" as="image" type="image/avif" media="(min-width: 768px) and (max-aspect-ratio: 2/1)" fetchpriority="high" imagesizes="max(100vw, 178vh)" imagesrcset="{{ '/assets/images/hero-desktop-1610-1280.avif' | relative_url }} 1280w, {{ '/assets/images/hero-desktop-1610-1920.avif' | relative_url }} 1920w, {{ '/assets/images/hero-desktop-1610-2560.avif' | relative_url }} 2560w">
+    <link rel="preload" as="image" type="image/avif" media="(min-width: 768px) and (min-aspect-ratio: 2001/1000)" fetchpriority="high" imagesizes="max(100vw, 233vh)" imagesrcset="{{ '/assets/images/hero-desktop-1280.avif' | relative_url }} 1280w, {{ '/assets/images/hero-desktop-1920.avif' | relative_url }} 1920w, {{ '/assets/images/hero-desktop-2560.avif' | relative_url }} 2560w">
+{%- endif %}
     <link rel="stylesheet" href="{{ '/assets/css/mvs.css' | relative_url }}?v={{ site.asset_version }}">
     {% seo %}
     <meta property="og:image" content="{{ '/assets/logo-display.png' | absolute_url }}">
@@ -44,53 +50,100 @@
     </script>
 </head>
 <body>
-    <div class="scroll-progress" aria-hidden="true"></div>
+    <svg class="sprite" aria-hidden="true" focusable="false" width="0" height="0">
+        <symbol id="gauge-dial" viewBox="0 0 200 200">
+            <path class="gauge__track" d="M22.06 145.00A90 90 0 1 1 185.60 72.19"/>
+            <path class="gauge__redline" d="M185.60 72.19A90 90 0 0 1 177.94 145.00"/>
+            <path class="gauge__minor" d="M21.44 134.98L26.92 132.54M18.21 126.58L23.92 124.72M15.88 117.88L21.75 116.63M14.47 108.99L20.44 108.36M14.47 91.01L20.44 91.64M15.88 82.12L21.75 83.37M18.21 73.42L23.92 75.28M21.44 65.02L26.92 67.46M30.42 49.45L35.28 52.98M36.09 42.45L40.55 46.47M42.45 36.09L46.47 40.55M49.45 30.42L52.98 35.28M65.02 21.44L67.46 26.92M73.42 18.21L75.28 23.92M82.12 15.88L83.37 21.75M91.01 14.47L91.64 20.44M108.99 14.47L108.36 20.44M117.88 15.88L116.63 21.75M126.58 18.21L124.72 23.92M134.98 21.44L132.54 26.92M150.55 30.42L147.02 35.28M157.55 36.09L153.53 40.55M163.91 42.45L159.45 46.47M169.58 49.45L164.72 52.98M178.56 65.02L173.08 67.46M181.79 73.42L176.08 75.28M184.12 82.12L178.25 83.37M185.53 91.01L179.56 91.64M185.53 108.99L179.56 108.36M184.12 117.88L178.25 116.63M181.79 126.58L176.08 124.72M178.56 134.98L173.08 132.54"/>
+            <path class="gauge__major" d="M25.52 143.00L37.65 136.00M14.00 100.00L28.00 100.00M25.52 57.00L37.65 64.00M57.00 25.52L64.00 37.65M100.00 14.00L100.00 28.00M143.00 25.52L136.00 37.65M174.48 57.00L162.35 64.00M186.00 100.00L172.00 100.00M174.48 143.00L162.35 136.00"/>
+            <path class="gauge__amber" d="M185.60 72.19L164.67 78.99"/>
+        </symbol>
+    </svg>
+
     <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
     <header class="site-header" data-site-header>
-        <nav class="navbar" aria-label="Navegação principal">
+        <div class="site-header__bar shell">
             <a href="{{ '/' | relative_url }}" class="brand" aria-label="MVS Preparações, página inicial">
-                <img src="{{ '/assets/logo-display.png' | relative_url }}" alt="" width="360" height="202">
-                <span>MVS Preparações</span>
+                <img src="{{ '/assets/logo-224.webp' | relative_url }}" srcset="{{ '/assets/logo-176.webp' | relative_url }} 176w, {{ '/assets/logo-224.webp' | relative_url }} 224w, {{ '/assets/logo-352.webp' | relative_url }} 352w" sizes="(max-width: 639px) 104px, (max-width: 1023px) 88px, 112px" alt="" width="224" height="126">
+                <span class="sr-only">MVS Preparações</span>
             </a>
 
-            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
-                <span class="nav-toggle__icon" aria-hidden="true"></span>
+            <nav class="menu" id="primary-navigation" aria-label="Navegação principal" data-nav-links>
+                <ol class="menu__list" role="list">
+                    <li><a href="{{ '/' | relative_url }}#inicio"><span class="menu__index" aria-hidden="true">01</span>Início</a></li>
+                    <li><a href="{{ '/' | relative_url }}#servicos"><span class="menu__index" aria-hidden="true">02</span>Serviços</a></li>
+                    <li><a href="{{ '/' | relative_url }}#processo"><span class="menu__index" aria-hidden="true">03</span>Processo</a></li>
+                    <li><a href="{{ '/' | relative_url }}#sobre"><span class="menu__index" aria-hidden="true">04</span>Sobre</a></li>
+                    <li><a href="{{ '/' | relative_url }}#contato"><span class="menu__index" aria-hidden="true">05</span>Contato</a></li>
+                </ol>
+                <div class="menu__extras">
+                    <a class="button button--primary" href="https://wa.me/5511995426610?text=Ol%C3%A1%2C%20MVS.%20Quero%20falar%20sobre%20um%20projeto%20de%20prepara%C3%A7%C3%A3o%20automotiva." target="_blank" rel="noopener">Chamar no WhatsApp<span class="button__arrow" aria-hidden="true">→</span></a>
+                    <a class="button button--ghost" href="tel:+551158528640">Ligar (11) 5852-8640</a>
+                    <p class="menu__hours label">Seg–sex · 10:00–19:30</p>
+                </div>
+            </nav>
+
+            <a class="button button--primary button--compact site-header__cta" href="{{ '/' | relative_url }}#contato">Orçamento<span class="button__arrow" aria-hidden="true">→</span></a>
+
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" hidden>
+                <span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span></span>
                 <span class="sr-only" data-menu-label>Abrir menu</span>
             </button>
-
-            <div class="nav-links" id="primary-navigation" data-nav-links>
-                <a href="#inicio">Início</a>
-                <a href="#servicos">Serviços</a>
-                <a href="#processo">Processo</a>
-                <a href="#sobre">Sobre</a>
-                <a href="#contato">Contato</a>
-            </div>
-        </nav>
+        </div>
+        <div class="scroll-progress" aria-hidden="true"></div>
     </header>
 
-    <main id="conteudo">
+    <main id="conteudo" tabindex="-1">
         {{ content }}
     </main>
 
     <footer class="site-footer">
-        <div class="footer-grid">
-            <div>
-                <img src="{{ '/assets/logo-display.png' | relative_url }}" alt="MVS Preparações" width="220" height="124" loading="lazy">
+        <div class="shell">
+            <div class="site-footer__brand">
+                <img src="{{ '/assets/logo-720.webp' | relative_url }}" srcset="{{ '/assets/logo-480.webp' | relative_url }} 480w, {{ '/assets/logo-720.webp' | relative_url }} 720w" sizes="(max-width: 639px) 240px, 360px" alt="MVS Preparações" width="720" height="405" loading="lazy" decoding="async">
                 <p>Projetos personalizados de alta performance em São Paulo.</p>
             </div>
-            <div>
-                <h2>Contato</h2>
-                <p><a href="mailto:contato@mvspreparacoes.com.br">contato@mvspreparacoes.com.br</a></p>
-                <p><a href="tel:+551158528640">(11) 5852-8640</a></p>
-                <p><a href="tel:+5511995426610">(11) 99542-6610</a></p>
+
+            <div class="site-footer__grid">
+                <div class="site-footer__col">
+                    <h2 class="label">Contato</h2>
+                    <ul role="list">
+                        <li><a href="mailto:contato@mvspreparacoes.com.br">contato@mvspreparacoes.com.br</a></li>
+                        <li><a class="data-link" href="tel:+551158528640">(11) 5852-8640</a></li>
+                        <li><a class="data-link" href="https://wa.me/5511995426610" target="_blank" rel="noopener">(11) 99542-6610 <span class="sr-only">(WhatsApp, abre em nova aba)</span></a></li>
+                    </ul>
+                </div>
+                <div class="site-footer__col">
+                    <h2 class="label">Endereço e horário</h2>
+                    <address>R. Luciano Silva, 156 · Vila das Belezas<br>São Paulo - SP, 05841-000</address>
+                    <p class="data">Seg a sex · 10:00–19:30<br>Almoço · 13:00–14:00</p>
+                </div>
+                <div class="site-footer__col">
+                    <h2 class="label">Redes</h2>
+                    <ul role="list">
+                        <li><a href="https://www.facebook.com/mvspreparacoes" target="_blank" rel="noopener">Facebook <span aria-hidden="true">↗</span><span class="sr-only">(abre em nova aba)</span></a></li>
+                        <li><a href="https://www.instagram.com/mvspreparacoes" target="_blank" rel="noopener">Instagram <span aria-hidden="true">↗</span><span class="sr-only">(abre em nova aba)</span></a></li>
+                        <li><a href="https://www.youtube.com/user/MVSfreelife" target="_blank" rel="noopener">YouTube <span aria-hidden="true">↗</span><span class="sr-only">(abre em nova aba)</span></a></li>
+                    </ul>
+                </div>
+                <nav class="site-footer__col" aria-label="Navegação do rodapé">
+                    <h2 class="label">Navegar</h2>
+                    <ul role="list">
+                        <li><a href="{{ '/' | relative_url }}#inicio">Início</a></li>
+                        <li><a href="{{ '/' | relative_url }}#servicos">Serviços</a></li>
+                        <li><a href="{{ '/' | relative_url }}#processo">Processo</a></li>
+                        <li><a href="{{ '/' | relative_url }}#sobre">Sobre</a></li>
+                        <li><a href="{{ '/' | relative_url }}#contato">Contato</a></li>
+                    </ul>
+                </nav>
             </div>
-            <div>
-                <h2>Endereço</h2>
-                <p>R. Luciano Silva, 156 - Vila das Belezas<br>São Paulo - SP, 05841-000</p>
+
+            <div class="site-footer__legal">
+                <p>&copy; <span data-current-year>{{ site.time | date: '%Y' }}</span> MVS Preparações. Todos os direitos reservados.</p>
+                <p class="site-footer__credit">Site desenvolvido e mantido por <a href="https://alquest.es" target="_blank" rel="noopener">Alquest <span aria-hidden="true">↗</span><span class="sr-only">(abre em nova aba)</span></a></p>
             </div>
         </div>
-        <p class="copyright">&copy; {{ site.time | date: '%Y' }} MVS Preparações. Todos os direitos reservados.</p>
     </footer>
 
     <script src="{{ '/assets/js/site.js' | relative_url }}?v={{ site.asset_version }}" defer></script>

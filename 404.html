@@ -5,15 +5,20 @@ description: A página solicitada não foi encontrada no site da MVS Preparaçõ
 permalink: /404.html
 ---
 
-<section class="hero section-dark">
-    <div class="section-shell hero__grid">
+<section class="hero hero--plain" aria-labelledby="notfound-title">
+    <div class="hero__media" aria-hidden="true"></div>
+    <div class="hero__scrim" aria-hidden="true"></div>
+    <div class="shell hero__inner">
         <div class="hero__copy">
-            <p class="eyebrow">404</p>
-            <h1>Página não encontrada.</h1>
+            <p class="eyebrow hero__eyebrow">Erro 404</p>
+            <h1 id="notfound-title" class="hero__title">
+                <span class="line"><span>Página não</span></span>
+                <span class="line"><span class="accent">encontrada.</span></span>
+            </h1>
             <p class="hero__lead">O endereço pode ter mudado. Volte para a página inicial ou fale com a MVS pelos canais de contato.</p>
             <div class="hero__actions">
-                <a class="button button-primary" href="{{ '/' | relative_url }}">Voltar ao início</a>
-                <a class="button button-secondary" href="{{ '/#contato' | relative_url }}">Ir para contato</a>
+                <a class="button button--primary button--lg" href="{{ '/' | relative_url }}">Voltar ao início<span class="button__arrow" aria-hidden="true">→</span></a>
+                <a class="button button--ghost button--lg" href="{{ '/#contato' | relative_url }}">Ir para contato</a>
             </div>
         </div>
     </div>

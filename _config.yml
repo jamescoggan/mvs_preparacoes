@@ -6,7 +6,7 @@ lang: pt-BR
 locale: pt_BR
 timezone: America/Sao_Paulo
 logo: /assets/logo-display.png
-asset_version: "20260710-cffef75"
+asset_version: "20260923-showcase"
 
 author:
   name: MVS Preparações
@@ -35,5 +35,6 @@ exclude:
   - .agent
   - AGENTS.md
   - docs/website-transformation
+  - docs/design-poc
   - Dockerfile
   - docker-compose.yml
